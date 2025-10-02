@@ -70,7 +70,11 @@
                                     <i class="bi-arrow-right"></i>
                                 </a>
                             </div>
-                        </div>
+
+<h1>Counting Specific Weekdays</h1> <p>The calculation is from <strong>Today</strong> to <strong>April 30, 2027</strong>.</p> <div id="results"> <p>Calculating...</p> </div> <script> function countTuesdaysAndWednesdays() { // Set the start and end dates const startDate = new Date(); // Today const endDate = new Date('2027-04-30T23:59:59'); // April 30, 2027, end of day // Normalize the start date to the beginning of today to ensure the count is accurate // regardless of the current time. startDate.setHours(0, 0, 0, 0); // JavaScript Date.getDay() returns: // 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday const TUESDAY = 2; const WEDNESDAY = 3; let tuesdayCount = 0; let wednesdayCount = 0; // Create a temporary date object to loop through, starting from the start date let currentDate = new Date(startDate.getTime()); // Loop while the current date is less than or equal to the end date while (currentDate <= endDate) { const dayOfWeek = currentDate.getDay(); if (dayOfWeek === TUESDAY) { tuesdayCount++; } else if (dayOfWeek === WEDNESDAY) { wednesdayCount++; } // Advance the date by one day currentDate.setDate(currentDate.getDate() + 1); } // Output the results to the HTML const resultsDiv = document.getElementById('results'); resultsDiv.innerHTML = ` <p>Start Date: ${startDate.toLocaleDateString()}</p> <p>End Date: ${endDate.toLocaleDateString()}</p> <h2>Results:</h2> <p><strong>Total Tuesdays:</strong> ${tuesdayCount}</p> <p><strong>Total Wednesdays:</strong> ${wednesdayCount}</p> <p><strong>Total Tuesdays and Wednesdays:</strong> ${tuesdayCount + wednesdayCount}</p> `; } // Run the function when the page loads countTuesdaysAndWednesdays(); </script>
+                        
+                                                
+                                                                                                </div>
                     </div>
                 </div>
             </section>
